@@ -10,7 +10,7 @@
       Compass Contracting, Inc. - Job Application
     </title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,300,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/application-9530ade7ba8e819104dce567d3faae5b.css">
+    <link rel="stylesheet" href="/assets/application-9e07185791c0a1a8471f3e863154d9c6.css">
   </head>
   <body>
     <section class="page">
@@ -60,7 +60,8 @@
           <div class="page-center-services-text-padding"></div>
           <h1>
             Job Application
-          </h1>
+          </h1><script src="/assets/vendor/signature_pad-035decbcd48973b8605ed7933775bdef.js">
+</script>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
           <p>
             <strong>For more information, please contact us:</strong>
@@ -100,7 +101,8 @@
             </tr>
           </table>
           <form class="cc-Form" action="https://getsimpleform.com/messages?form_api_token=b2d25a5f8b0f1aedda55760f4627bc37" method="post">
-            <input type="hidden" name="redirect_to" value="http://compasscontracting.com/pages/job-application-thanks.html">
+            <input type="hidden" name="redirect_to" value="http://compasscontracting.com/pages/job-application-thanks.html"> <input type="hidden"
+            name="signature" value="">
             <section class="cc-FormSection">
               <h5>
                 Personal Information
@@ -354,10 +356,100 @@
                 "emp-reason-leaving-2">
               </fieldset>
             </section>
-            <fieldset>
-              <label>&nbsp;</label> <input type="submit" value="Submit Application">
-            </fieldset>
-          </form>
+            <section class="cc-FormSection">
+              <h5>
+                References:
+              </h5>
+              <p>
+                List three persons not related to you, whom you have known at least one year.
+              </p>
+              <fieldset>
+                <label for="ref-name-1">Name:</label> <input type="text" id="ref-name-1" name="ref-name-1">
+              </fieldset>
+              <fieldset>
+                <label for="ref-address-1">Address:</label> <input type="text" id="ref-address-1" name="ref-address-1">
+              </fieldset>
+              <fieldset>
+                <label for="ref-phone-1">Phone:</label> <input type="text" id="ref-phone-1" name="ref-phone-1">
+              </fieldset>
+              <fieldset>
+                <label for="ref-years-acquainted-1">Years Acquainted:</label> <input type="text" id="ref-years-acquainted-1" name=
+                "ref-years-acquainted-1">
+              </fieldset>
+              <hr class="cc-FormRule">
+              <fieldset>
+                <label for="ref-name-2">Name:</label> <input type="text" id="ref-name-2" name="ref-name-2">
+              </fieldset>
+              <fieldset>
+                <label for="ref-address-2">Address:</label> <input type="text" id="ref-address-2" name="ref-address-2">
+              </fieldset>
+              <fieldset>
+                <label for="ref-phone-2">Phone:</label> <input type="text" id="ref-phone-2" name="ref-phone-2">
+              </fieldset>
+              <fieldset>
+                <label for="ref-years-acquainted-2">Years Acquainted:</label> <input type="text" id="ref-years-acquainted-2" name=
+                "ref-years-acquainted-2">
+              </fieldset>
+              <hr class="cc-FormRule">
+              <fieldset>
+                <label for="ref-name-3">Name:</label> <input type="text" id="ref-name-3" name="ref-name-3">
+              </fieldset>
+              <fieldset>
+                <label for="ref-address-3">Address:</label> <input type="text" id="ref-address-3" name="ref-address-3">
+              </fieldset>
+              <fieldset>
+                <label for="ref-phone-3">Phone:</label> <input type="text" id="ref-phone-3" name="ref-phone-3">
+              </fieldset>
+              <fieldset>
+                <label for="ref-years-acquainted-3">Years Acquainted:</label> <input type="text" id="ref-years-acquainted-3" name=
+                "ref-years-acquainted-3">
+              </fieldset>
+            </section>
+            <section class="cc-FormSection">
+              <h5>
+                Authorization:
+              </h5>
+              <p>
+                I certify that all information submitted by me on this application is true and complete and I understand that if any false
+                information, omissions, or misrepresentations are discovered, my application may be rejected and, if I am employed, my employment may
+                be terminated at any time.
+              </p>
+              <p>
+                In consideration of my employment, I agree to conform to the company's rules and regulation, and I agree that my employment and
+                compensation can be terminated, with or without cause, and with or without notice, at any time, at either my or the company's option.
+                I also understand and agree that the terms and condition of my employment may be changed, with our without cause and with or without
+                notice, at any time by the company.
+              </p>
+              <p id="signature" class="cc-FormSignature">
+                <canvas></canvas>
+              </p>
+              <div class="cc-FormSignature-footer">
+                <div class="cc-FormSignature-footer-desc">
+                  Sign Above
+                </div><button type="button" class="cc-FormSignature-footer-btn">Clear</button>
+              </div>
+            </section>
+            <section class="cc-FormSection">
+              <input type="submit" value="Submit Application">
+            </section>
+          </form><script>
+(function(){
+          window.JobApplication = {};
+          var signature;
+          var signatureInput = document.querySelector('.cc-Form input[name=signature]')
+          var canvas = document.getElementById('signature').querySelector('canvas');
+          canvas.width = 450;
+          canvas.height = 175;
+          var onEnd = function(){ signatureInput.value = signature.toDataURL('image/jpeg'); }
+          signature = new SignaturePad(canvas, {onEnd: onEnd});
+          signature.penColor = 'blue';
+          var clearButton = document.querySelector('.cc-FormSignature-footer button')
+          clearButton.addEventListener("click", function(event){
+          signature.clear();
+          });
+          window.JobApplication.Signature = signature;
+          }());
+          </script>
         </article>
         <footer class="page-footer">
           &copy; Copyright 2002-2016 Compass Contracting, Inc. All rights reserved.
